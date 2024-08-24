@@ -1,0 +1,57 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins, sans-serif';
+    background-color: #1a1a1a; 
+    color: #ffffff;            
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* General styling for headings */
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    color: #ffffff;  }
+  
+  /* Links */
+  a {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* General button styles */
+  button {
+    background-color: #1e90ff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #1c86ee;
+  }
+  
+  /* General container styles */
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  /* Global padding and margin classes */
+  .mt-1 { margin-top: 1rem; }
+  .mb-1 { margin-bottom: 1rem; }
+  .pt-1 { padding-top: 1rem; }
+  .pb-1 { padding-bottom: 1rem; }
+  
