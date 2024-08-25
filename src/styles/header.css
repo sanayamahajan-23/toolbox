@@ -3,27 +3,49 @@
   top: 0;
   width: 100%;
   z-index: 1000;
+  background-color: rgba(255,255,255);
+  border-bottom: 4px solid #cbb598;
+  padding: 10px 20px;
 }
 
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 10px;
-  background: linear-gradient(135deg, #ffffff, #f1f1f1); 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
-  position: relative;
+  justify-content: space-between;
 }
 
-.navbar::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  right: 0;
-  height: 10px; 
-  background: rgba(255, 255, 255, 0.7);
-  filter: blur(8px); }
-
 .logo img {
-  height: 40px; }
+  height: 80px;
+  margin-left: 20px;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  background-color: #d3cdcd;
+  border:#29292E;
+  border-radius: 12px;
+  padding: 5px 20px; 
+  max-width: 500px;}
+
+.journal-image {
+  height: 60px;
+  margin-right: 10px;
+}
+
+.cta span {
+  color: #000;
+  font-size: 14px;
+  text-align: left; 
+
+}
+
+.cta a {
+  color: #000;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.cta a:hover {
+  text-decoration: underline;
+}

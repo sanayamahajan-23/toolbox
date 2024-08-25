@@ -1,26 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../styles/carousel.css';
 import { useVideoContext } from '../contexts/VideoContext';
 
-const Carousel = () => {
+const Carousel = ({ videos }) => {
   const { currentVideoIndex, setCurrentVideoIndex } = useVideoContext();
-  const videos = [
-    { src: '/assets/video1.mp4', title: 'Video 1', description: 'Video description' },
-    { src: '/assets/video2.mp4', title: 'Video 2', description: 'Video description' },
-    { src: '/assets/video3.mp4', title: 'Video 3', description: 'Video description' },
-    { src: '/assets/video4.mp4', title: 'Video 4', description: 'Video description' },
-    { src: '/assets/video5.mp4', title: 'Video 5', description: 'Video description' },
-    { src: '/assets/video6.mp4', title: 'Video 6', description: 'Video description' },
-    { src: '/assets/video7.mp4', title: 'Video 7', description: 'Video description' },
-    { src: '/assets/video8.mp4', title: 'Video 8', description: 'Video description' },
-    { src: '/assets/video9.mp4', title: 'Video 9', description: 'Video description' },
-    { src: '/assets/video10.mp4', title: 'Video 10', description: 'Video description' },
-    { src: '/assets/video11.mp4', title: 'Video 11', description: 'Video description' },
-
-  ];
+  const activeVideoRef = useRef(null);
 
   useEffect(() => {
-    // Update video index if needed
+    if (activeVideoRef.current) {
+      activeVideoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   }, [currentVideoIndex]);
 
   const goToNext = () => {
@@ -43,19 +32,26 @@ const Carousel = () => {
       <button className="carousel-button left" onClick={goToPrevious}>
         &lt;
       </button>
-      {videos.map((video, index) => (
-        <div
-          key={index}
-          className={`carousel-video-container ${getClassNames(index)}`}
-        >
-          <video
-            className="carousel-video"
-            src={video.src}
-            controls
-            autoPlay={index === currentVideoIndex}
-          />
-        </div>
-      ))}
+      {videos.length > 0 ? (
+        videos.map((video, index) => (
+          <div
+            key={index}
+            className={`carousel-video-container ${getClassNames(index)}`}
+            ref={index === currentVideoIndex ? activeVideoRef : null}
+          >
+            <iframe
+              className="carousel-video"
+              src={video}
+              title={`Video ${index + 1}`}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        ))
+      ) : (
+        <p>No videos available.</p>
+      )}
       <button className="carousel-button right" onClick={goToNext}>
         &gt;
       </button>

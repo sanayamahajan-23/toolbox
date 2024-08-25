@@ -5,33 +5,59 @@ import Carousel from '../components/Carousel';
 import Footer from '../components/Footer';
 import Banner from '../components/Banner';
 import { VideoProvider } from '../contexts/VideoContext';
-const ShareholderNewsletter = () => {
-  const archiveVideos = [
-    { src: '/assets/video1.mp4', title: 'Video 1', description: 'Video description' },
-    { src: '/assets/video2.mp4', title: 'Video 2', description: 'Video description' },
-    { src: '/assets/video3.mp4', title: 'Video 3', description: 'Video description' },
-    { src: '/assets/video4.mp4', title: 'Video 4', description: 'Video description' },
-    { src: '/assets/video5.mp4', title: 'Video 5', description: 'Video description' },
-    { src: '/assets/video6.mp4', title: 'Video 6', description: 'Video description' },
-    { src: '/assets/video7.mp4', title: 'Video 7', description: 'Video description' },
-    { src: '/assets/video8.mp4', title: 'Video 8', description: 'Video description' },
-    { src: '/assets/video9.mp4', title: 'Video 9', description: 'Video description' },
-    { src: '/assets/video10.mp4', title: 'Video 10', description: 'Video description' },
-    { src: '/assets/video11.mp4', title: 'Video 11', description: 'Video description' },
 
+const ShareholderNewsletter = () => {
+  const driversAndMotivationVideos = [
+    process.env.REACT_APP_DM_VIDEO_1,
+    process.env.REACT_APP_DM_VIDEO_2,
+    process.env.REACT_APP_DM_VIDEO_3,
+    process.env.REACT_APP_DM_VIDEO_4,
+    process.env.REACT_APP_DM_VIDEO_5,
+    process.env.REACT_APP_DM_VIDEO_6,
+    process.env.REACT_APP_DM_VIDEO_7,
+    process.env.REACT_APP_DM_VIDEO_8,
+    process.env.REACT_APP_DM_VIDEO_9,
+    process.env.REACT_APP_DM_VIDEO_10,
+  ].filter(Boolean);
+
+  const planForSuccessVideos = [
+    process.env.REACT_APP_PFS_VIDEO_1,
+    process.env.REACT_APP_PFS_VIDEO_2,
+    process.env.REACT_APP_PFS_VIDEO_3,
+    process.env.REACT_APP_PFS_VIDEO_4,
+    process.env.REACT_APP_PFS_VIDEO_5,
+    process.env.REACT_APP_PFS_VIDEO_6,
+    process.env.REACT_APP_PFS_VIDEO_7,
+    process.env.REACT_APP_PFS_VIDEO_8,
+  ].filter(Boolean);
+
+  const dailyWorkVideos = [
+    process.env.REACT_APP_TDW_VIDEO_1,
+    process.env.REACT_APP_TDW_VIDEO_2,
+    process.env.REACT_APP_TDW_VIDEO_3,
+    process.env.REACT_APP_TDW_VIDEO_4,
+    process.env.REACT_APP_TDW_VIDEO_5,
+    process.env.REACT_APP_TDW_VIDEO_6,
+  ].filter(Boolean);
+
+  const allVideos = [
+    ...driversAndMotivationVideos,
+    ...planForSuccessVideos,
+    ...dailyWorkVideos,
   ];
 
   return (
     <VideoProvider>
-    <Header />
-    <Banner />
-    <main>
-      <Carousel />
-      <VideoGallery year="2023" videos={archiveVideos} />
-      <VideoGallery year="2022" videos={archiveVideos} />
-    </main>
-    <Footer />
-  </VideoProvider>
+      <Header />
+      <Banner />
+      <main>
+        <Carousel videos={allVideos} />
+        <VideoGallery heading="Phase 1: Drivers and Motivation" videos={driversAndMotivationVideos} />
+        <VideoGallery heading="Phase 2: Plan for Success" videos={planForSuccessVideos} />
+        <VideoGallery heading="Phase 3: The Daily Work" videos={dailyWorkVideos} />
+      </main>
+      <Footer />
+    </VideoProvider>
   );
 };
 

@@ -1,10 +1,15 @@
 .footer {
-    background-color: #000000;
+    background-color: #ffffff;
     text-align: center;
     padding: 20px;
+    border-top: 4px solid #cbb598;
   }
   
   .footer p {
-    color: #ffffff;
+    color: #000000;
   }
-  
+  @media (max-width: 768px) {
+    .footer {
+      font-size: 14px; /* Adjust font size for mobile */
+    }
+  }

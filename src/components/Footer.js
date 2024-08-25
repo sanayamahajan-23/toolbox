@@ -3,7 +3,7 @@ import '../styles/footer.css';
 const Footer = () => {
   return (
     <footer className="footer">
-      <p>© 2024 Toolbox OS</p>
+      <p>© 2024 ShortenTheGap</p>
     </footer>
   );
 };

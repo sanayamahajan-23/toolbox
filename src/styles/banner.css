@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+    .banner {
+      height: 30vh; /* Adjust height for smaller screens */
+      padding: 10px;
+    }
+  
+    .title {
+      font-size: 24px;
+    }
+  
+    .subtitle {
+      font-size: 18px;
+    }
+  }

@@ -1,9 +1,8 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 import '../styles/videogallery.css';
 import { useVideoContext } from '../contexts/VideoContext';
 
-const VideoGallery = ({ year, videos }) => {
+const VideoGallery = ({ heading, videos }) => {
   const sliderRef = useRef(null);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(true);
@@ -34,18 +33,23 @@ const VideoGallery = ({ year, videos }) => {
       const { scrollLeft, clientWidth } = sliderRef.current;
       sliderRef.current.scrollTo({
         left: direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   };
 
-  const handleThumbnailClick = (index) => {
-    setCurrentVideoIndex(index);
+  const handleVideoClick = (index) => {
+    setCurrentVideoIndex(index); // Set the current video index for the carousel
+  };
+
+  const getThumbnailUrl = (videoUrl) => {
+    const videoId = videoUrl.split('/').pop(); // Extract the ID from the video URL
+    return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`; // Generate the thumbnail URL
   };
 
   return (
     <div className="video-gallery">
-      <h2>{year}</h2>
+      <h2>{heading}</h2>
       <div className="video-gallery-container">
         {showLeftButton && (
           <button className="carousel-button left" onClick={() => scroll('left')}>
@@ -57,23 +61,16 @@ const VideoGallery = ({ year, videos }) => {
             <div
               key={index}
               className="video-gallery-item"
-              onClick={() => handleThumbnailClick(index)}
+              onClick={() => handleVideoClick(index)} // Set the current video index on click
             >
+              {/* Display the YouTube video thumbnail */}
               <img
-                src={`/assets/thumbnail${index + 1}.png`}
-                alt={video.title}
-                className="video-gallery-thumbnail"
+                src={getThumbnailUrl(video)}
+                alt={`Video thumbnail ${index + 1}`}
+                width="100%"
+                height="auto"
               />
-                
-              <div className="video-gallery-info">
-                <div className="video-gallery-card">
-                  <h3>{video.title}</h3>
-                  <p>{video.description}</p>
-                </div>
-              </div>
-              <div className="video-gallery-play-button">
-                <span>&#9658;</span>
-              </div>
+                    <div className="play-button">&#9658;</div>
             </div>
           ))}
         </div>

@@ -1,7 +1,8 @@
-
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 const VideoContext = createContext();
+
+export const useVideoContext = () => useContext(VideoContext);
 
 export const VideoProvider = ({ children }) => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
@@ -12,5 +13,3 @@ export const VideoProvider = ({ children }) => {
     </VideoContext.Provider>
   );
 };
-
-export const useVideoContext = () => useContext(VideoContext);
