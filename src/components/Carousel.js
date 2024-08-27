@@ -8,6 +8,11 @@ const Carousel = ({ videos }) => {
 
   useEffect(() => {
     if (activeVideoRef.current) {
+      // Force reflow to prevent getting stuck
+      activeVideoRef.current.style.display = 'none';
+      void activeVideoRef.current.offsetHeight; // Trigger reflow
+      activeVideoRef.current.style.display = '';
+      
       activeVideoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   }, [currentVideoIndex]);
@@ -17,7 +22,9 @@ const Carousel = ({ videos }) => {
   };
 
   const goToPrevious = () => {
-    setCurrentVideoIndex((prevIndex) => (prevIndex - 1 + videos.length) % videos.length);
+    setCurrentVideoIndex((prevIndex) =>
+      prevIndex === 0 ? videos.length - 1 : prevIndex - 1
+    );
   };
 
   const getClassNames = (index) => {

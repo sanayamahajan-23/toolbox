@@ -4,7 +4,7 @@ import '../styles/banner.css';
 const Banner = () => {
   const bannerStyle = {
     position: 'relative',
-    height: '40vh', // Adjusted height
+    height: '40vh', 
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
@@ -14,7 +14,7 @@ const Banner = () => {
     borderBottom: '4px solid #cbb598',
     color: '#E0E0E0',
     padding: '20px',
-    paddingTop: '100px', // Added padding to avoid overlap
+    paddingTop: '100px', 
     overflow: 'hidden',
   };
   const titleStyle = {

@@ -10,6 +10,6 @@
   }
   @media (max-width: 768px) {
     .footer {
-      font-size: 14px; /* Adjust font size for mobile */
+      font-size: 14px;
     }
   }

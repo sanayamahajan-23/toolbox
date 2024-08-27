@@ -1,6 +1,6 @@
 .carousel {
   position: relative;
-  width: 80%; /* Adjust width as needed */
+  width: 80%;
   margin: 30px auto;
   height: 500px;
   display: flex;
@@ -13,37 +13,37 @@
 .carousel-video-container {
   position: absolute;
   width: 60%;
-  height: 100%; /* Ensure the height matches the carousel height */
+  height: 100%;
   transform-style: preserve-3d;
-  transition: transform 1s ease, opacity 1s ease;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
   opacity: 0;
+  z-index: 1; 
 }
 
 .carousel-video-container.active {
   transform: translateZ(0) scale(1);
   opacity: 1;
-  z-index: 2;
+  z-index: 3;
 }
 
 .carousel-video-container.previous {
   transform: translateX(-150%) translateZ(-500px) rotateY(45deg) scale(0.8);
   opacity: 0.5;
-  z-index: 1;
+  z-index: 2;
 }
 
 .carousel-video-container.next {
   transform: translateX(150%) translateZ(-500px) rotateY(-45deg) scale(0.8);
   opacity: 0.5;
-  z-index: 1;
+  z-index: 2; 
 }
 
 .carousel-video {
   width: 100%;
-  height: 100%; /* Ensure the iframe takes up the entire container */
+  height: 100%; 
   border-radius: 15px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
-  border: none; /* Remove any border from the iframe */
-}
+  border: none; }
 
 .carousel-button {
   position: absolute;
@@ -54,7 +54,7 @@
   color: white;
   font-size: 2rem;
   cursor: pointer;
-  z-index:1000;
+  z-index: 1000;
 }
 
 .carousel-button.left {
@@ -64,12 +64,60 @@
 .carousel-button.right {
   right: 10px;
 }
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .carousel {
+    width: 90%;
+    height: 450px;
+  }
+
+  .carousel-video-container {
+    width: 70%;
+  }
+
+  .carousel-video-container.previous, 
+  .carousel-video-container.next {
+    transform: translateX(-100%) translateZ(-300px) rotateY(30deg) scale(0.9);
+  }
+}
+
 @media (max-width: 768px) {
-  .carousel-button {
-    font-size: 18px;
+  .carousel {
+    width: 100%;
+    height: 400px;
   }
 
   .carousel-video-container {
     width: 100%;
   }
+
+  .carousel-button {
+    font-size: 1.5rem;
+  }
+
+  .carousel-video-container.previous, 
+  .carousel-video-container.next {
+    transform: translateX(-50%) translateZ(-200px) rotateY(20deg) scale(0.95);
+  }
 }
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 350px;
+  }
+
+  .carousel-video-container {
+    width: 100%;
+  }
+
+  .carousel-button {
+    font-size: 1.2rem;
+  }
+
+  .carousel-video-container.previous, 
+  .carousel-video-container.next {
+    transform: translateX(-25%) translateZ(-100px) rotateY(10deg) scale(0.98);
+  }
+}
+
