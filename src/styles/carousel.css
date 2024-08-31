@@ -27,13 +27,13 @@
 }
 
 .carousel-video-container.previous {
-  transform: translateX(-150%) translateZ(-500px) rotateY(45deg) scale(0.8);
+  transform: translateX(-80%) translateZ(-500px) rotateY(60deg) scale(0.5);
   opacity: 0.5;
   z-index: 2;
 }
 
 .carousel-video-container.next {
-  transform: translateX(150%) translateZ(-500px) rotateY(-45deg) scale(0.8);
+  transform: translateX(80%) translateZ(-500px) rotateY(-60deg) scale(0.5);
   opacity: 0.5;
   z-index: 2; 
 }
@@ -76,16 +76,18 @@
     width: 70%;
   }
 
-  .carousel-video-container.previous, 
-  .carousel-video-container.next {
-    transform: translateX(-100%) translateZ(-300px) rotateY(30deg) scale(0.9);
+  .carousel-video-container.next{
+    transform: translateX(50%) translateZ(100px) rotateY(30deg) scale(0.5);
+  }
+  .carousel-video-container.previous{
+    transform: translateX(-50%) translateZ(-100px) rotateY(30deg) scale(0.5);
   }
 }
 
 @media (max-width: 768px) {
   .carousel {
-    width: 100%;
-    height: 400px;
+    width: 70%;
+    height: 300px;
   }
 
   .carousel-video-container {
@@ -98,12 +100,13 @@
 
   .carousel-video-container.previous, 
   .carousel-video-container.next {
-    transform: translateX(-50%) translateZ(-200px) rotateY(20deg) scale(0.95);
+    transform: translateX(-25%) translateZ(-100px) rotateY(30deg) scale(0.95);
   }
 }
 
 @media (max-width: 480px) {
   .carousel {
+    width: 95%;
     height: 350px;
   }
 

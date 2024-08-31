@@ -3,68 +3,28 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(255,255,255);
-  border-bottom: 4px solid #cbb598;
-  padding: 10px 20px;
+  background-color: #ffffff; 
+  border-bottom: 4px solid #E4723C;
+  padding: 10px 0; 
+  display: flex;
+  justify-content: center;
 }
 
 .navbar {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center; 
 }
 
 .logo img {
   height: 80px;
-  margin-left: 20px;
+  background-color: #FFFFFF;
 }
 
-.cta {
-  display: flex;
-  align-items: center;
-  background-color: #d3cdcd;
-  border:#29292E;
-  border-radius: 12px;
-  padding: 5px 20px; 
-  max-width: 500px;}
 
-.journal-image {
-  height: 60px;
-  margin-right: 10px;
-}
-
-.cta span {
-  color: #000;
-  font-size: 14px;
-  text-align: left; 
-
-}
-
-.cta a {
-  color: #000;
-  text-decoration: none;
-  font-weight: normal;
-}
-
-.cta a:hover {
-  text-decoration: underline;
-}
 @media (max-width: 768px) {
   .logo img {
-    width: 70px;
+    width: 100%;
     height:60px;
   }
 
-  .cta {
-    padding: 3px 10px;
-    font-size: 12px; 
-  }
-
-  .journal-image {
-    width: 25px; 
-  }
-
-  .cta span {
-    line-height: 1.2; 
-  }
 }

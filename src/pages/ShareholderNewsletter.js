@@ -52,9 +52,21 @@ const ShareholderNewsletter = () => {
       <Banner />
       <main>
         <Carousel videos={allVideos} />
-        <VideoGallery heading="Phase 1: Drivers and Motivation" videos={driversAndMotivationVideos} />
-        <VideoGallery heading="Phase 2: Plan for Success" videos={planForSuccessVideos} />
-        <VideoGallery heading="Phase 3: The Daily Work" videos={dailyWorkVideos} />
+        <VideoGallery
+  heading="Phase 1: Drivers and Motivation"
+  videos={driversAndMotivationVideos}
+  offset={0}
+/>
+<VideoGallery
+  heading="Phase 2: Plan for Success"
+  videos={planForSuccessVideos}
+  offset={driversAndMotivationVideos.length}
+/>
+<VideoGallery
+  heading="Phase 3: The Daily Work"
+  videos={dailyWorkVideos}
+  offset={driversAndMotivationVideos.length + planForSuccessVideos.length}
+/>
       </main>
       <Footer />
     </VideoProvider>

@@ -8,11 +8,6 @@ const Carousel = ({ videos }) => {
 
   useEffect(() => {
     if (activeVideoRef.current) {
-      // Force reflow to prevent getting stuck
-      activeVideoRef.current.style.display = 'none';
-      void activeVideoRef.current.offsetHeight; // Trigger reflow
-      activeVideoRef.current.style.display = '';
-      
       activeVideoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   }, [currentVideoIndex]);

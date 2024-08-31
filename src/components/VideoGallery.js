@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import '../styles/videogallery.css';
 import { useVideoContext } from '../contexts/VideoContext';
 
-const VideoGallery = ({ heading, videos }) => {
+const VideoGallery = ({ heading, videos, offset }) => {
   const sliderRef = useRef(null);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(true);
@@ -39,7 +39,7 @@ const VideoGallery = ({ heading, videos }) => {
   };
 
   const handleVideoClick = (index) => {
-    setCurrentVideoIndex(index); // Set the current video index for the carousel
+    setCurrentVideoIndex(index + offset); // Set the correct video index in the carousel
   };
 
   const getThumbnailUrl = (videoUrl) => {
@@ -61,16 +61,15 @@ const VideoGallery = ({ heading, videos }) => {
             <div
               key={index}
               className="video-gallery-item"
-              onClick={() => handleVideoClick(index)} // Set the current video index on click
+              onClick={() => handleVideoClick(index)} // Set the correct index when clicked
             >
-              {/* Display the YouTube video thumbnail */}
               <img
                 src={getThumbnailUrl(video)}
                 alt={`Video thumbnail ${index + 1}`}
                 width="100%"
                 height="auto"
               />
-                    <div className="play-button">&#9658;</div>
+              <div className="play-button">&#9658;</div>
             </div>
           ))}
         </div>
