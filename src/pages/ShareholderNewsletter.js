@@ -40,34 +40,39 @@ const ShareholderNewsletter = () => {
     process.env.REACT_APP_TDW_VIDEO_6,
   ].filter(Boolean);
 
-  const allVideos = [
-    ...driversAndMotivationVideos,
-    ...planForSuccessVideos,
-    ...dailyWorkVideos,
+  const videos = [
+    { elementId: "vidalytics_embed_kAz6cJcn09qD1Jgm" },
+    { elementId: "vidalytics_embed_7NyyCgVAadYvleJe" }
   ];
+
+  // const allVideos = [
+  //   ...driversAndMotivationVideos,
+  //   ...planForSuccessVideos,
+  //   ...dailyWorkVideos,
+  // ];
 
   return (
     <VideoProvider>
       <Header />
       <Banner />
-      <main>
-        <Carousel videos={allVideos} />
-        <VideoGallery
-  heading="Phase 1: Drivers and Motivation"
-  videos={driversAndMotivationVideos}
-  offset={0}
-/>
-<VideoGallery
-  heading="Phase 2: Plan for Success"
-  videos={planForSuccessVideos}
-  offset={driversAndMotivationVideos.length}
-/>
-<VideoGallery
-  heading="Phase 3: The Daily Work"
-  videos={dailyWorkVideos}
-  offset={driversAndMotivationVideos.length + planForSuccessVideos.length}
-/>
-      </main>
+    <main>
+    <Carousel videos={videos} />
+    <VideoGallery
+      heading="Phase 1: Drivers and Motivation"
+      videos={driversAndMotivationVideos}
+      offset={0}
+      />
+    <VideoGallery
+      heading="Phase 2: Plan for Success"
+      videos={planForSuccessVideos}
+      offset={driversAndMotivationVideos.length}
+      />
+    <VideoGallery
+      heading="Phase 3: The Daily Work"
+      videos={dailyWorkVideos}
+      offset={driversAndMotivationVideos.length + planForSuccessVideos.length}
+     />
+    </main>
       <Footer />
     </VideoProvider>
   );
