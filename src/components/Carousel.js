@@ -3,7 +3,9 @@ import '../styles/carousel.css';
 import { useVideoContext } from '../contexts/VideoContext';
 
 const Carousel = ({ videos }) => {
-  const { currentVideoIndex, setCurrentVideoIndex } = useVideoContext();
+
+  const { currentVideoIndex, setCurrentVideoIndex, currentvideoId, setCurrentVideoId } = useVideoContext();
+
   const activeVideoRef = useRef(null);
 
   useEffect(() => {
@@ -11,6 +13,12 @@ const Carousel = ({ videos }) => {
       activeVideoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   }, [currentVideoIndex]);
+
+  useEffect(() => {
+    if (activeVideoRef.current) {
+      activeVideoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [currentvideoId]);
 
   useEffect(() => {
     videos.forEach((video) => {
@@ -84,16 +92,19 @@ const Carousel = ({ videos }) => {
 
   const goToNext = () => {
     setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videos.length);
+    setCurrentVideoId(currentvideoId)
   };
 
   const goToPrevious = () => {
     setCurrentVideoIndex((prevIndex) =>
       prevIndex === 0 ? videos.length - 1 : prevIndex - 1
     );
+    setCurrentVideoId(currentvideoId)
   };
 
-  const getClassNames = (index) => {
-    if (index === currentVideoIndex) return 'active';
+  const getClassNames = (index, elementId) => {
+
+    if (index === currentVideoIndex || elementId == currentvideoId ) return 'active';
     if ((index + 1) % videos.length === currentVideoIndex) return 'next';
     if ((index - 1 + videos.length) % videos.length === currentVideoIndex) return 'previous';
     return 'hidden';
@@ -108,8 +119,9 @@ const Carousel = ({ videos }) => {
         videos.map((video, index) => (
           <div
             key={index}
-            className={`carousel-video-container ${getClassNames(index)}`}
-            ref={index === currentVideoIndex ? activeVideoRef : null}
+            className={`carousel-video-container ${getClassNames(index, video.elementId)}`}
+            ref={ video.elementId == currentvideoId ? activeVideoRef : null }
+            // ref={index === currentVideoIndex ? activeVideoRef : null}
           >
             <div
               id={video.elementId}

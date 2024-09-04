@@ -7,72 +7,91 @@ import Banner from '../components/Banner';
 import { VideoProvider } from '../contexts/VideoContext';
 
 const ShareholderNewsletter = () => {
+
+  const CarouselVideos = [
+    {elementId: 'kAz6cJcn09qD1Jgm'},
+    {elementId: 'j7sWliFucdhZv3Xy'},
+    {elementId: 'IO6ACYKP3TTMa4bb'},
+    {elementId: 'jGEB9lNWfERa5Ieu'},
+    {elementId: 'hz7j0odFA7GSyPtT'},
+    {elementId: 'AdBdjMQm_9jFFCUF'},
+    {elementId: 'E4dL3ar1pdB'},
+    {elementId: '8fN1jKigicrQ0085'},
+    {elementId: 'SeoVHM8KImajOku4'},
+    {elementId: '53reyMw14s_hdQ5v'},
+    {elementId: '0PNwAmovrV_wRl8_'},
+    {elementId: 'pAPgqhyDsRB_Mfpd'},
+    {elementId: '7KQMqPEqjRH7cv68'},
+    {elementId: 'vnGxWoyMyFyyAqfv'},
+    {elementId: 'SfhxD0PE17ke8bHD'},
+    {elementId: 'HZpLrsyuUHZUUmQg'},
+    {elementId: 'PgmDfstHpyaTspxD'},
+    {elementId: 'xsRwFQQHDPFLlnLX'},
+    {elementId: 'IFRv6ybT9Evu'},
+    {elementId: '8JnBq8joSI5oXRQC'},
+    {elementId: 'KgkGRGWTh3dZqEXj'},
+    {elementId: 'w4Eswbhi8TU4Tz_H'},
+    {elementId: 'p4LO4SWHqsEpnQV1'},
+    {elementId: 'yhKAq5ImcOOhRIan'},
+  ]
+
+
   const driversAndMotivationVideos = [
-    process.env.REACT_APP_DM_VIDEO_1,
-    process.env.REACT_APP_DM_VIDEO_2,
-    process.env.REACT_APP_DM_VIDEO_3,
-    process.env.REACT_APP_DM_VIDEO_4,
-    process.env.REACT_APP_DM_VIDEO_5,
-    process.env.REACT_APP_DM_VIDEO_6,
-    process.env.REACT_APP_DM_VIDEO_7,
-    process.env.REACT_APP_DM_VIDEO_8,
-    process.env.REACT_APP_DM_VIDEO_9,
-    process.env.REACT_APP_DM_VIDEO_10,
+    { elementId: 'AdBdjMQm_9jFFCUF', id: 'fUbMwlEqocX1w_sH', thumbnailUrl:{
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/fUbMwlEqocX1w_sH/img/thumbnail/blob-66d5f868176f4.jpg',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/xuExG4VgQnp2scPS/img/thumbnail/blob-66d5f24ba71a7.jpg'
+    } },
+    {elementId: 'p4LO4SWHqsEpnQV1', id: 'FaMQxI8ucLRxvhFQ', thumbnailUrl:{
+      desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/xuExG4VgQnp2scPS/img/thumbnail/blob-66d5f24ba71a7.jpg',
+      mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/xuExG4VgQnp2scPS/img/thumbnail/blob-66d5f24ba71a7.jpg'
+  }}
   ].filter(Boolean);
 
   const planForSuccessVideos = [
-    process.env.REACT_APP_PFS_VIDEO_1,
-    process.env.REACT_APP_PFS_VIDEO_2,
-    process.env.REACT_APP_PFS_VIDEO_3,
-    process.env.REACT_APP_PFS_VIDEO_4,
-    process.env.REACT_APP_PFS_VIDEO_5,
-    process.env.REACT_APP_PFS_VIDEO_6,
-    process.env.REACT_APP_PFS_VIDEO_7,
-    process.env.REACT_APP_PFS_VIDEO_8,
+    { elementId: 'AdBdjMQm_9jFFCUF', id: 'fUbMwlEqocX1w_sH', thumbnailUrl:{
+      desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/fUbMwlEqocX1w_sH/img/thumbnail/blob-66d5f868176f4.jpg',
+      mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/xuExG4VgQnp2scPS/img/thumbnail/blob-66d5f24ba71a7.jpg'
+  } },
+  {elementId: 'p4LO4SWHqsEpnQV1', id: 'FaMQxI8ucLRxvhFQ', thumbnailUrl:{
+    desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/xuExG4VgQnp2scPS/img/thumbnail/blob-66d5f24ba71a7.jpg',
+    mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/xuExG4VgQnp2scPS/img/thumbnail/blob-66d5f24ba71a7.jpg'
+}}
   ].filter(Boolean);
 
   const dailyWorkVideos = [
-    process.env.REACT_APP_TDW_VIDEO_1,
-    process.env.REACT_APP_TDW_VIDEO_2,
-    process.env.REACT_APP_TDW_VIDEO_3,
-    process.env.REACT_APP_TDW_VIDEO_4,
-    process.env.REACT_APP_TDW_VIDEO_5,
-    process.env.REACT_APP_TDW_VIDEO_6,
+    { elementId: 'AdBdjMQm_9jFFCUF', id: 'fUbMwlEqocX1w_sH', thumbnailUrl:{
+      desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/fUbMwlEqocX1w_sH/img/thumbnail/blob-66d5f868176f4.jpg',
+      mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/xuExG4VgQnp2scPS/img/thumbnail/blob-66d5f24ba71a7.jpg'
+  } },
+  {elementId: 'p4LO4SWHqsEpnQV1', id: 'FaMQxI8ucLRxvhFQ', thumbnailUrl:{
+    desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/xuExG4VgQnp2scPS/img/thumbnail/blob-66d5f24ba71a7.jpg',
+    mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/xuExG4VgQnp2scPS/img/thumbnail/blob-66d5f24ba71a7.jpg'
+}}
   ].filter(Boolean);
 
-  const videos = [
-    { elementId: "vidalytics_embed_kAz6cJcn09qD1Jgm" },
-    { elementId: "vidalytics_embed_7NyyCgVAadYvleJe" }
-  ];
-
-  // const allVideos = [
-  //   ...driversAndMotivationVideos,
-  //   ...planForSuccessVideos,
-  //   ...dailyWorkVideos,
-  // ];
-
   return (
+
     <VideoProvider>
       <Header />
       <Banner />
-    <main>
-    <Carousel videos={videos} />
-    <VideoGallery
-      heading="Phase 1: Drivers and Motivation"
-      videos={driversAndMotivationVideos}
-      offset={0}
-      />
-    <VideoGallery
-      heading="Phase 2: Plan for Success"
-      videos={planForSuccessVideos}
-      offset={driversAndMotivationVideos.length}
-      />
-    <VideoGallery
-      heading="Phase 3: The Daily Work"
-      videos={dailyWorkVideos}
-      offset={driversAndMotivationVideos.length + planForSuccessVideos.length}
-     />
-    </main>
+        <main>
+          <Carousel videos={CarouselVideos} />
+          <VideoGallery
+            heading="Phase 1: Drivers and Motivation"
+            videos={driversAndMotivationVideos}
+            offset={driversAndMotivationVideos.length}
+            />
+          <VideoGallery
+            heading="Phase 2: Plan for Success"
+            videos={planForSuccessVideos}
+            offset={driversAndMotivationVideos.length}
+            />
+          <VideoGallery
+            heading="Phase 3: The Daily Work"
+            videos={dailyWorkVideos}
+            offset={driversAndMotivationVideos.length + planForSuccessVideos.length}
+          />
+        </main>
       <Footer />
     </VideoProvider>
   );
