@@ -14,6 +14,7 @@ const Banner = () => {
     color: '#E0E0E0',
     overflow: 'hidden',
     paddingTop: '120px', 
+   fontFamily: "'Rubik', sans-serif"
   };
 
   const contentStyle = {
@@ -23,18 +24,18 @@ const Banner = () => {
 
   const titleStyle = {
     fontSize: '36px', 
-    fontWeight: 'bold',
+    fontWeight: '500',
     color: '#FFFFFF',
   };
 
   const subtitleStyle = {
-    fontSize: '20px', 
-    color: '#e4723c',
+    fontSize: '25px', 
+    color: '#cfb692',
     margin: 0,
   };
 
   const ctaContainerStyle = {
-    backgroundColor: '#E4723C', 
+    backgroundColor: '#b24525', 
     width: '100%',
     display: 'flex',
     justifyContent: 'center',

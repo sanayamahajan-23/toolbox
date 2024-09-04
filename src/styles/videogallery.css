@@ -1,18 +1,19 @@
 .video-gallery {
   padding: 20px;
-  background-color: #29292E;
+  background-color: #27262f;
   color: white;
   cursor: pointer;
 }
 
 .video-gallery h2 {
+  font-family: 'Rubik',sans-serif !important;
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: left;
   position: relative;
   padding: 10px;
   color: #fff;
-  border-bottom: 2px solid #e4723c; 
+  border-bottom: 2px solid #b14425; 
 }
 
 .video-gallery-container {

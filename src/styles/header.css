@@ -1,14 +1,4 @@
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: #ffffff; 
-  border-bottom: 4px solid #E4723C;
-  padding: 10px 0; 
-  display: flex;
-  justify-content: center;
-}
+
 
 .navbar {
   display: flex;
@@ -17,9 +7,19 @@
 
 .logo img {
   height: 80px;
-  background-color: #FFFFFF;
+ 
 }
-
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #27262f; 
+  border-bottom: 10px solid #b24525;
+  padding: 10px 0; 
+  display: flex;
+  justify-content: center;
+}
 
 @media (max-width: 768px) {
   .logo img {
