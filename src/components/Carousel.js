@@ -6,6 +6,10 @@ const Carousel = ({ videos }) => {
 
   const { currentVideoIndex, setCurrentVideoIndex, currentvideoId, setCurrentVideoId } = useVideoContext();
 
+  if(!currentvideoId) {
+    setCurrentVideoId(videos[0].elementId)
+  }
+
   const activeVideoRef = useRef(null);
 
   useEffect(() => {
@@ -92,19 +96,24 @@ const Carousel = ({ videos }) => {
 
   const goToNext = () => {
     setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videos.length);
-    setCurrentVideoId(currentvideoId)
+    setCurrentVideoId(videos[currentVideoIndex+1].elementId)
   };
 
   const goToPrevious = () => {
     setCurrentVideoIndex((prevIndex) =>
       prevIndex === 0 ? videos.length - 1 : prevIndex - 1
     );
-    setCurrentVideoId(currentvideoId)
+    let index = currentVideoIndex
+    if(currentVideoIndex == 0) {
+      index = videos.length - 1
+    } else {
+      index = currentVideoIndex - 1
+    }
+    setCurrentVideoId(videos[index].elementId)
   };
 
   const getClassNames = (index, elementId) => {
-
-    if (index === currentVideoIndex || elementId == currentvideoId ) return 'active';
+    if (elementId == currentvideoId ) return 'active';
     if ((index + 1) % videos.length === currentVideoIndex) return 'next';
     if ((index - 1 + videos.length) % videos.length === currentVideoIndex) return 'previous';
     return 'hidden';
