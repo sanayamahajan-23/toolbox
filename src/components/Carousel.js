@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../styles/carousel.css';
 import { useVideoContext } from '../contexts/VideoContext';
 
 const Carousel = ({ videos }) => {
 
   const { currentVideoIndex, setCurrentVideoIndex, currentvideoId, setCurrentVideoId } = useVideoContext();
+  const [isFirstVideo, setFirstVideo] = useState(true)
 
   if(!currentvideoId) {
     setCurrentVideoId(videos[0].elementId)
@@ -84,8 +85,18 @@ const Carousel = ({ videos }) => {
   }, [videos]);
 
   const goToNext = () => {
+
     setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videos.length);
-    setCurrentVideoId(videos[currentVideoIndex+1].elementId)
+    if(currentVideoIndex == videos.length -1) {
+      setCurrentVideoId(videos[0].elementId)
+    } else {
+      setCurrentVideoId(videos[currentVideoIndex+1].elementId)
+    }
+    if(currentVideoIndex + 1 == 0) {
+      setFirstVideo(true)
+    } else {
+      setFirstVideo(false)
+    }
   };
 
   const goToPrevious = () => {
@@ -99,6 +110,11 @@ const Carousel = ({ videos }) => {
       index = currentVideoIndex - 1
     }
     setCurrentVideoId(videos[index].elementId)
+    if(currentVideoIndex -1 == 0) {
+      setFirstVideo(true)
+    } else {
+      setFirstVideo(false)
+    }
   };
 
   const getClassNames = (index, elementId) => {
@@ -110,9 +126,9 @@ const Carousel = ({ videos }) => {
 
   return (
     <div className="carousel">
-      <button className="carousel-button left" onClick={goToPrevious}>
+      { !isFirstVideo && (<button className="carousel-button left" onClick={goToPrevious}>
         &lt;
-      </button>
+      </button>)}
       {videos.length > 0 ? (
         videos.map((video, index) => (
           <div
