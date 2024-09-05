@@ -2,12 +2,27 @@
   position: relative;
   width: 80%;
   margin: 30px auto;
-  height: 500px;
+  height: 40vw; 
+  max-height: 500px; 
   display: flex;
   justify-content: center;
   align-items: center;
   perspective: 1500px;
   overflow: hidden;
+}
+.parent-of-carousel {
+  padding: 0;
+  margin: 0;
+  height: auto;
+  overflow: hidden; 
+}
+
+@media (min-width: 1400px) {
+  .carousel {
+    width: 70%; 
+    height: 30vw; 
+    max-height: 500px;
+  }
 }
 
 .carousel-video-container {
@@ -15,9 +30,9 @@
   width: 60%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   opacity: 0;
-  z-index: 1; 
+  z-index: 1;
 }
 
 .carousel-video-container.active {
@@ -27,23 +42,24 @@
 }
 
 .carousel-video-container.previous {
-  transform: translateX(-80%) translateZ(-500px) rotateY(60deg) scale(0.5);
+  transform: translateX(-80%) translateZ(-500px) rotateY(60deg) scale(0.6); 
   opacity: 0.5;
   z-index: 2;
 }
 
 .carousel-video-container.next {
-  transform: translateX(80%) translateZ(-500px) rotateY(-60deg) scale(0.5);
+  transform: translateX(80%) translateZ(-500px) rotateY(-60deg) scale(0.6); 
   opacity: 0.5;
-  z-index: 2; 
+  z-index: 2;
 }
 
 .carousel-video {
   width: 100%;
-  height: 100%; 
+  height: 100%;
   border-radius: 15px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
-  border: none; }
+  border: none;
+}
 
 .carousel-button {
   position: absolute;
@@ -65,49 +81,49 @@
   right: 10px;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 1024px) {
   .carousel {
     width: 90%;
-    height: 450px;
+    height: 50vw; 
+    max-height: 500px;
   }
 
   .carousel-video-container {
     width: 70%;
   }
 
-  .carousel-video-container.next{
-    transform: translateX(50%) translateZ(100px) rotateY(30deg) scale(0.5);
+  .carousel-video-container.next {
+    transform: translateX(50%) translateZ(-200px) rotateY(-45deg) scale(0.7);
   }
-  .carousel-video-container.previous{
-    transform: translateX(-50%) translateZ(-100px) rotateY(30deg) scale(0.5);
+
+  .carousel-video-container.previous {
+    transform: translateX(-50%) translateZ(-200px) rotateY(45deg) scale(0.7);
   }
 }
 
 @media (max-width: 768px) {
   .carousel {
-    width: 70%;
-    height: 300px;
+    width: 90%;
+    height: 40vw;
+    max-height: 400px;
   }
 
   .carousel-video-container {
-    width: 100%;
-  }
-
-  .carousel-button {
-    font-size: 1.5rem;
+    width: 80%;
   }
 
   .carousel-video-container.previous, 
   .carousel-video-container.next {
-    transform: translateX(-25%) translateZ(-100px) rotateY(30deg) scale(0.95);
+    transform: translateX(-30%) translateZ(-150px) rotateY(30deg) scale(0.85); 
   }
 }
 
 @media (max-width: 480px) {
   .carousel {
     width: 95%;
-    height: 350px;
+    height: 55vw; 
+    max-height: 300px;
   }
 
   .carousel-video-container {
@@ -120,7 +136,6 @@
 
   .carousel-video-container.previous, 
   .carousel-video-container.next {
-    transform: translateX(-25%) translateZ(-100px) rotateY(10deg) scale(0.98);
+    transform: translateX(-25%) translateZ(-100px) rotateY(15deg) scale(0.9); 
   }
 }
-

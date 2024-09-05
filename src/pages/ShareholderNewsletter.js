@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Header from '../components/Header';
 import VideoGallery from '../components/VideoGallery';
 import Carousel from '../components/Carousel';
 import Footer from '../components/Footer';
 import Banner from '../components/Banner';
+import Downloadables from '../components/Downloadables';
 import { VideoProvider } from '../contexts/VideoContext';
 
 const ShareholderNewsletter = () => {
+  const resourcesRef = useRef(null);
 
+  const scrollToResources = () => {
+    if (resourcesRef.current) {
+      resourcesRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   const CarouselVideos = [
     {elementId: 'kAz6cJcn09qD1Jgm'},
     {elementId: 'j7sWliFucdhZv3Xy'},
@@ -164,8 +171,9 @@ const ShareholderNewsletter = () => {
 
     <VideoProvider>
       <Header />
-      <Banner />
+     
         <main>
+        <Banner onScrollToResources={scrollToResources} />
           <Carousel videos={CarouselVideos} />
           <VideoGallery
             heading="Phase 1: Drivers and Motivation"
@@ -182,7 +190,9 @@ const ShareholderNewsletter = () => {
             videos={dailyWorkVideos}
             offset={driversAndMotivationVideos.length + planForSuccessVideos.length}
           />
+            <Downloadables ref={resourcesRef}/>
         </main>
+      
       <Footer />
     </VideoProvider>
   );

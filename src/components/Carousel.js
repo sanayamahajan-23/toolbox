@@ -12,18 +12,7 @@ const Carousel = ({ videos }) => {
 
   const activeVideoRef = useRef(null);
 
-  useEffect(() => {
-    if (activeVideoRef.current) {
-      activeVideoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  }, [currentVideoIndex]);
-
-  useEffect(() => {
-    if (activeVideoRef.current) {
-      activeVideoRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  }, [currentvideoId]);
-
+  
   useEffect(() => {
     videos.forEach((video) => {
       (function (v, i, d, a, l, y, t, c, s) {

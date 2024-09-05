@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/banner.css';
 
-const Banner = () => {
+const Banner = ({ onScrollToResources }) => {
   const bannerStyle = {
     position: 'relative',
     width: '100%',
@@ -14,7 +14,7 @@ const Banner = () => {
     color: '#E0E0E0',
     overflow: 'hidden',
     paddingTop: '120px', 
-   fontFamily: "'Rubik', sans-serif"
+    fontFamily: "'Rubik', sans-serif"
   };
 
   const contentStyle = {
@@ -40,15 +40,18 @@ const Banner = () => {
     display: 'flex',
     justifyContent: 'center',
     padding: '15px 0',
+    fontFamily: "'Rubik', sans-serif",
   };
 
   const ctaStyle = {
     display: 'flex',
     alignItems: 'center',
     backgroundColor: '#FFFFFF', 
-    borderRadius: '12px',
+    borderRadius: '20px',
     padding: '10px 20px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', 
+    width: '250px', 
+    justifyContent: 'center',
   };
 
   const journalImageStyle = {
@@ -68,6 +71,19 @@ const Banner = () => {
     fontWeight: 'normal',
   };
 
+  const secondButtonStyle = {
+    ...ctaStyle,
+    marginLeft: '10px',  
+    textAlign: 'center',
+  };
+
+  const secondCtaTextStyle = {
+    color: '#b24525',
+    fontSize: '14px',
+    textAlign: 'center', 
+    fontWeight : 'bold'
+  };
+
   return (
     <section style={bannerStyle}>
       <div style={contentStyle}>
@@ -84,6 +100,13 @@ const Banner = () => {
           <span style={ctaTextStyle}>
             Don't have a journal yet? <br />
             <a href="/order" style={ctaLinkStyle}>Go order one <strong>here</strong></a>
+          </span>
+        </div>
+        <div style={secondButtonStyle} onClick={onScrollToResources}>
+          <span style={secondCtaTextStyle}>
+            <a href="#" style={{ color: '#b24525', textDecoration: 'none' }}>
+              <strong>DOWNLOAD</strong><br />your free resources
+            </a>
           </span>
         </div>
       </div>
