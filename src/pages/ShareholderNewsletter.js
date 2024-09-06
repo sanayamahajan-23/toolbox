@@ -43,128 +43,213 @@ const ShareholderNewsletter = () => {
   ]
 
 
-  const driversAndMotivationVideos = [
-    { 
-      elementId: 'kAz6cJcn09qD1Jgm', id: '0wOnwsqXC6RV0FoL',
-      thumbnailUrl: {
-        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/0wOnwsqXC6RV0FoL/img/thumbnail/blob-66d341fa15769.jpg',
-        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/0wOnwsqXC6RV0FoL/img/thumbnail/blob-66d341fa15769.jpg'
-      }
-   },
+  const driversAndMotivationVideos =  [
     {
-      elementId: 'j7sWliFucdhZv3Xy', id: '2sIyj_xlFb8w54YF', thumbnailUrl:{
-      desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/2sIyj_xlFb8w54YF/148721/145086__FFMPEG/thumb/thumbnail-5_0.jpg',
-      mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/2sIyj_xlFb8w54YF/148721/145086__FFMPEG/thumb/thumbnail-5_0.jpg'
-    }},
-  {
-    elementId: 'IO6ACYKP3TTMa4bb', id: 'Bvv8jLnaQeZjB5_m', thumbnailUrl:{
-    desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/Bvv8jLnaQeZjB5_m/img/thumbnail/blob-66d5f95a9174f.jpg',
-    mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/Bvv8jLnaQeZjB5_m/img/thumbnail/blob-66d5f95a9174f.jpg'
-  }},
-  {
-    elementId: 'jGEB9lNWfERa5Ieu', id: 'pSwJFG2gHtWa7jL6', thumbnailUrl:{
-    desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/pSwJFG2gHtWa7jL6/img/thumbnail/blob-66d5f905d9e59.jpg',
-    mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/pSwJFG2gHtWa7jL6/img/thumbnail/blob-66d5f905d9e59.jpg'
-  }},
-  {
-    elementId: 'hz7j0odFA7GSyPtT', id: 'a3bxQBBKb4FMv_Fu', thumbnailUrl:{
-    desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/a3bxQBBKb4FMv_Fu/img/thumbnail/blob-66d5f8bae238a.jpg',
-    mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/a3bxQBBKb4FMv_Fu/img/thumbnail/blob-66d5f8bae238a.jpg'
-  }},
-  {
-    elementId: 'AdBdjMQm_9jFFCUF', id: 'a3bxQBBKb4FMv_Fu', thumbnailUrl:{
-    desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/fUbMwlEqocX1w_sH/img/thumbnail/blob-66d5f868176f4.jpg',
-    mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/fUbMwlEqocX1w_sH/img/thumbnail/blob-66d5f868176f4.jpg'
-  }},
-  {
-    elementId: 'SDMq_E4dL3ar1pdB', id: 'Hej4abl63pXlLaZ8', thumbnailUrl:{
-    desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/Hej4abl63pXlLaZ8/img/thumbnail/blob-66d5f81744ef8.jpg',
-    mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/Hej4abl63pXlLaZ8/img/thumbnail/blob-66d5f81744ef8.jpg'
-  }},
-  {
-    elementId: '8fN1jKigicrQ0085', id: 'CP9eE7SJRCEuZVF2', thumbnailUrl:{
-    desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/CP9eE7SJRCEuZVF2/img/thumbnail/blob-66d5f7ca3c34b.jpg',
-    mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/CP9eE7SJRCEuZVF2/img/thumbnail/blob-66d5f7ca3c34b.jpg'
-  }},
-  {
-    elementId: 'wysiQ9FSzMBBklbV', id: 'csyDQD81c59pjEdd', thumbnailUrl:{
-    desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/csyDQD81c59pjEdd/img/thumbnail/blob-66d5f77055c10.jpg',
-    mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/csyDQD81c59pjEdd/img/thumbnail/blob-66d5f77055c10.jpg'
-  }},
-  {
-    elementId: 'wysiQ9FSzMBBklbV', id: 'BGwbjuKTdY1zIm2Z', thumbnailUrl:{
-    desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/csyDQD81c59pjEdd/img/thumbnail/blob-66d5f77055c10.jpg',
-    mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/csyDQD81c59pjEdd/img/thumbnail/blob-66d5f77055c10.jpg'
-  }},
-  {
-    elementId: '53reyMw14s_hdQ5v', id: 'Iu9yAD9Zcla9y_ef', thumbnailUrl:{
-    desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/Iu9yAD9Zcla9y_ef/img/thumbnail/blob-66d5f6bea9f24.jpg',
-    mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/Iu9yAD9Zcla9y_ef/img/thumbnail/blob-66d5f6bea9f24.jpg'
-  }}
-
-].filter(Boolean);
-
-  const planForSuccessVideos = [
-    { elementId: '0PNwAmovrV_wRl8_', id: 'IQZf4q0eB8o4eMgo', thumbnailUrl:{
-      desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/IQZf4q0eB8o4eMgo/img/thumbnail/blob-66d5f664bf06b.jpg',
-      mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/IQZf4q0eB8o4eMgo/img/thumbnail/blob-66d5f664bf06b.jpg'
-  } },
-  {elementId: 'pAPgqhyDsRB_Mfpd', id: 'M2Q79mOC7k_aE8H4', thumbnailUrl:{
-    desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/M2Q79mOC7k_aE8H4/img/thumbnail/blob-66d5f5e51cba3.jpg',
-    mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/M2Q79mOC7k_aE8H4/img/thumbnail/blob-66d5f5e51cba3.jpg'
-  }},
-  {elementId: '7KQMqPEqjRH7cv68', id: 'FaMQxI8ucLRxvhFQ', thumbnailUrl:{
-    desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/Lo6JVutr6twpUDuN/img/thumbnail/blob-66d5f5a3d98a0.jpg',
-    mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/Lo6JVutr6twpUDuN/img/thumbnail/blob-66d5f5a3d98a0.jpg'
-  }},
-{elementId: 'e2FbEoxv6fUeHxHG', id: 'FaMQxI8ucLRxvhFQ', thumbnailUrl:{
-  desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/e2FbEoxv6fUeHxHG/img/thumbnail/blob-66d5f52dae410.jpg',
-  mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/e2FbEoxv6fUeHxHG/img/thumbnail/blob-66d5f52dae410.jpg'
-}},
-
+      elementId: 'kAz6cJcn09qD1Jgm',
+      id: '0wOnwsqXC6RV0FoL',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/0wOnwsqXC6RV0FoL/img/thumbnail/1-66da39c63091e.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/0wOnwsqXC6RV0FoL/img/thumbnail/1-66da39c63091e.png'
+      }
+    },
+    {
+      elementId: 'j7sWliFucdhZv3Xy',
+      id: '2sIyj_xlFb8w54YF',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/2sIyj_xlFb8w54YF/img/thumbnail/2-66da39f0446b0.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/2sIyj_xlFb8w54YF/img/thumbnail/2-66da39f0446b0.png'
+      }
+    },
+    {
+      elementId: 'IO6ACYKP3TTMa4bb',
+      id: 'Bvv8jLnaQeZjB5_m',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/Bvv8jLnaQeZjB5_m/img/thumbnail/3-66da3a148380c.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/Bvv8jLnaQeZjB5_m/img/thumbnail/3-66da3a148380c.png'
+      }
+    },
+    {
+      elementId: 'jGEB9lNWfERa5Ieu',
+      id: 'pSwJFG2gHtWa7jL6',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/pSwJFG2gHtWa7jL6/img/thumbnail/4-66da3a4f7d5e4.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/pSwJFG2gHtWa7jL6/img/thumbnail/4-66da3a4f7d5e4.png'
+      }
+    },
+    {
+      elementId: 'hz7j0odFA7GSyPtT',
+      id: 'a3bxQBBKb4FMv_Fu',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/a3bxQBBKb4FMv_Fu/img/thumbnail/5-66da3a323ee13.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/a3bxQBBKb4FMv_Fu/img/thumbnail/5-66da3a323ee13.png'
+      }
+    },
+    {
+      elementId: 'AdBdjMQm_9jFFCUF',
+      id: 'fUbMwlEqocX1w_sH',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/fUbMwlEqocX1w_sH/img/thumbnail/6-66da3a85a2a36.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/fUbMwlEqocX1w_sH/img/thumbnail/6-66da3a85a2a36.png'
+      }
+    },
+    {
+      elementId: 'SDMq_E4dL3ar1pdB',
+      id: 'Hej4abl63pXlLaZ8',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/Hej4abl63pXlLaZ8/img/thumbnail/7-66da3aa43eea2.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/Hej4abl63pXlLaZ8/img/thumbnail/7-66da3aa43eea2.png'
+      }
+    },
+    {
+      elementId: '8fN1jKigicrQ0085',
+      id: 'CP9eE7SJRCEuZVF2',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/CP9eE7SJRCEuZVF2/img/thumbnail/8-66da402952df9.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/CP9eE7SJRCEuZVF2/img/thumbnail/8-66da402952df9.png'
+      }
+    },
+    {
+      elementId: 'wysiQ9FSzMBBklbV',
+      id: 'csyDQD81c59pjEdd',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/csyDQD81c59pjEdd/img/thumbnail/9-66da4001b532a.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/csyDQD81c59pjEdd/img/thumbnail/9-66da4001b532a.png'
+      }
+    },
+    {
+      elementId: 'wysiQ9FSzMBBklbV',
+      id: 'BGwbjuKTdY1zIm2Z',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/BGwbjuKTdY1zIm2Z/img/thumbnail/FINALTHUMBNAIL-66da4e69a915e.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/BGwbjuKTdY1zIm2Z/img/thumbnail/FINALTHUMBNAIL-66da4e69a915e.png'
+      }
+    },
+    {
+      elementId: '53reyMw14s_hdQ5v',
+      id: 'Iu9yAD9Zcla9y_ef',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/Iu9yAD9Zcla9y_ef/img/thumbnail/10-66da3af7bd630.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/Iu9yAD9Zcla9y_ef/img/thumbnail/10-66da3af7bd630.png'
+      }
+    }
   ].filter(Boolean);
 
-  const dailyWorkVideos = [
-    { elementId: 'SfhxD0PE17ke8bHD', id: '5AwMZ2hVvD7OHynH', thumbnailUrl:{
-      desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/5AwMZ2hVvD7OHynH/img/thumbnail/blob-66d5f4bb72998.jpg',
-      mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/5AwMZ2hVvD7OHynH/img/thumbnail/blob-66d5f4bb72998.jpg'
-  } },
-  {elementId: 'HZpLrsyuUHZUUmQg', id: '0giZ2R44lYw_jkCz', thumbnailUrl:{
-    desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/0giZ2R44lYw_jkCz/img/thumbnail/blob-66d5f46c5c453.jpg',
-    mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/0giZ2R44lYw_jkCz/img/thumbnail/blob-66d5f46c5c453.jpg'
-}},
-{ elementId: 'PgmDfstHpyaTspxD', id: '5eVB43sq28iYVbWz', thumbnailUrl:{
-  desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/5eVB43sq28iYVbWz/148737/145102__FFMPEG/thumb/thumbnail-5_0.jpg',
-  mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/5eVB43sq28iYVbWz/148737/145102__FFMPEG/thumb/thumbnail-5_0.jpg'
-} },
-{ elementId: 'xsRwFQQHDPFLlnLX', id: 'UXegj44DaTMepNLi', thumbnailUrl:{
-  desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/UXegj44DaTMepNLi/img/thumbnail/blob-66d5f3d76d88a.jpg',
-  mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/UXegj44DaTMepNLi/img/thumbnail/blob-66d5f3d76d88a.jpg'
-} },
-{ elementId: 'pM5_IFRv6ybT9Evu', id: 'Q3jcEKdURuRgP_RM', thumbnailUrl:{
-  desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/Q3jcEKdURuRgP_RM/img/thumbnail/blob-66d5f38341cd4.jpg',
-  mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/Q3jcEKdURuRgP_RM/img/thumbnail/blob-66d5f38341cd4.jpg'
-} },
-{ elementId: '8JnBq8joSI5oXRQC', id: '11DTX1t7yeqaokyX', thumbnailUrl:{
-  desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/11DTX1t7yeqaokyX/148740/145105__FFMPEG/thumb/thumbnail-5_0.jpg',
-  mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/11DTX1t7yeqaokyX/148740/145105__FFMPEG/thumb/thumbnail-5_0.jpg'
-} },
-{ elementId: 'KgkGRGWTh3dZqEXj', id: '9GwpRaqVvlMNq71E', thumbnailUrl:{
-  desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/9GwpRaqVvlMNq71E/148741/145106__FFMPEG/thumb/thumbnail-5_0.jpg',
-  mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/9GwpRaqVvlMNq71E/148741/145106__FFMPEG/thumb/thumbnail-5_0.jpg'
-} },
-{ elementId: 'w4Eswbhi8TU4Tz_H', id: '4PO3cgAxwABssHyK', thumbnailUrl:{
-  desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/4PO3cgAxwABssHyK/148742/145107__FFMPEG/thumb/thumbnail-5_0.jpg',
-  mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/4PO3cgAxwABssHyK/148742/145107__FFMPEG/thumb/thumbnail-5_0.jpg'
-} },
-{ elementId: 'p4LO4SWHqsEpnQV1', id: 'FaMQxI8ucLRxvhFQ', thumbnailUrl:{
-  desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/FaMQxI8ucLRxvhFQ/148743/145108__FFMPEG/thumb/thumbnail-5_0.jpg',
-  mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/FaMQxI8ucLRxvhFQ/148743/145108__FFMPEG/thumb/thumbnail-5_0.jpg'
-} },
-{ elementId: 'yhKAq5ImcOOhRIan', id: 'xuExG4VgQnp2scPS', thumbnailUrl:{
-  desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/xuExG4VgQnp2scPS/img/thumbnail/blob-66d5f24ba71a7.jpg',
-  mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/xuExG4VgQnp2scPS/img/thumbnail/blob-66d5f24ba71a7.jpg'
-} }
+  const planForSuccessVideos = [
+    {
+      elementId: '0PNwAmovrV_wRl8_',
+      id: 'IQZf4q0eB8o4eMgo',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/IQZf4q0eB8o4eMgo/img/thumbnail/11-66da3bb447fd0.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/IQZf4q0eB8o4eMgo/img/thumbnail/11-66da3bb447fd0.png'
+      }
+    },
+    {
+      elementId: 'pAPgqhyDsRB_Mfpd',
+      id: 'M2Q79mOC7k_aE8H4',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/M2Q79mOC7k_aE8H4/img/thumbnail/12-66da3bd784633.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/M2Q79mOC7k_aE8H4/img/thumbnail/12-66da3bd784633.png'
+      }
+    },
+    {
+      elementId: '7KQMqPEqjRH7cv68',
+      id: 'Lo6JVutr6twpUDuN',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/Lo6JVutr6twpUDuN/img/thumbnail/13-66da3bf5685f9.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/Lo6JVutr6twpUDuN/img/thumbnail/13-66da3bf5685f9.png'
+      }
+    },
+    {
+      elementId: 'vnGxWoyMyFyyAqfv',
+      id: 'e2FbEoxv6fUeHxHG',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/e2FbEoxv6fUeHxHG/img/thumbnail/14-66da3c1b558c0.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/e2FbEoxv6fUeHxHG/img/thumbnail/14-66da3c1b558c0.png'
+      }
+    }
+  ].filter(Boolean);
+
+  const dailyWorkVideos =  [
+    {
+      elementId: 'SfhxD0PE17ke8bHD',
+      id: '5AwMZ2hVvD7OHynH',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/5AwMZ2hVvD7OHynH/img/thumbnail/15-66da3d2b1a09f.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/5AwMZ2hVvD7OHynH/img/thumbnail/15-66da3d2b1a09f.png'
+      }
+    },
+    {
+      elementId: 'HZpLrsyuUHZUUmQg',
+      id: '0giZ2R44lYw_jkCz',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/0giZ2R44lYw_jkCz/img/thumbnail/16-66da3d574651d.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/0giZ2R44lYw_jkCz/img/thumbnail/16-66da3d574651d.png'
+      }
+    },
+    {
+      elementId: 'PgmDfstHpyaTspxD',
+      id: '5eVB43sq28iYVbWz',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/5eVB43sq28iYVbWz/img/thumbnail/17-66da3d7ac0d0b.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/5eVB43sq28iYVbWz/img/thumbnail/17-66da3d7ac0d0b.png'
+      }
+    },
+    {
+      elementId: 'xsRwFQQHDPFLlnLX',
+      id: 'UXegj44DaTMepNLi',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/UXegj44DaTMepNLi/img/thumbnail/18-66da3e493cee1.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/UXegj44DaTMepNLi/img/thumbnail/18-66da3e493cee1.png'
+      }
+    },
+    {
+      elementId: 'pM5_IFRv6ybT9Evu',
+      id: 'Q3jcEKdURuRgP_RM',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/Q3jcEKdURuRgP_RM/img/thumbnail/19-66da3e6d42d3f.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/Q3jcEKdURuRgP_RM/img/thumbnail/19-66da3e6d42d3f.png'
+      }
+    },
+    {
+      elementId: '8JnBq8joSI5oXRQC',
+      id: '11DTX1t7yeqaokyX',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/11DTX1t7yeqaokyX/img/thumbnail/20-66da3ebbb4fde.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/11DTX1t7yeqaokyX/img/thumbnail/20-66da3ebbb4fde.png'
+      }
+    },
+    {
+      elementId: 'KgkGRGWTh3dZqEXj',
+      id: '9GwpRaqVvlMNq71E',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/9GwpRaqVvlMNq71E/img/thumbnail/21-66da3f2120b63.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/9GwpRaqVvlMNq71E/img/thumbnail/21-66da3f2120b63.png'
+      }
+    },
+    {
+      elementId: 'w4Eswbhi8TU4Tz_H',
+      id: '4PO3cgAxwABssHyK',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/4PO3cgAxwABssHyK/img/thumbnail/22-66da3f38aa696.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/4PO3cgAxwABssHyK/img/thumbnail/22-66da3f38aa696.png'
+      }
+    },
+    {
+      elementId: 'p4LO4SWHqsEpnQV1',
+      id: 'FaMQxI8ucLRxvhFQ',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/FaMQxI8ucLRxvhFQ/img/thumbnail/23-66da3f4f798b7.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/FaMQxI8ucLRxvhFQ/img/thumbnail/23-66da3f4f798b7.png'
+      }
+    },
+    {
+      elementId: 'yhKAq5ImcOOhRIan',
+      id: 'xuExG4VgQnp2scPS',
+      thumbnailUrl: {
+        desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/xuExG4VgQnp2scPS/img/thumbnail/24-66da3f65b9ca9.png',
+        mobile: 'https://fast.vidalytics.com/video/0kHi6Jq0/xuExG4VgQnp2scPS/img/thumbnail/24-66da3f65b9ca9.png'
+      }
+    }
   ].filter(Boolean);
 
   return (
