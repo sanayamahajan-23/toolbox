@@ -47,7 +47,7 @@ const VideoGallery = ({ heading, videos, offset }) => {
     
     // Scroll the page to the top
     window.scrollTo({
-      top: 0,
+      top: 115,
       behavior: 'smooth' // This ensures the scrolling is smooth
     });
   };
