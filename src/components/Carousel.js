@@ -5,7 +5,7 @@ import { useVideoContext } from '../contexts/VideoContext';
 const Carousel = ({ videos }) => {
 
   const { currentVideoIndex, setCurrentVideoIndex, currentvideoId, setCurrentVideoId } = useVideoContext();
-  const [isFirstVideo, setFirstVideo] = useState(true);
+  const [isFirstVideo, setFirstVideo] = useState(true)
 
   const activeVideoRef = useRef(null);
 
@@ -83,34 +83,55 @@ const Carousel = ({ videos }) => {
     });
   }, [videos]);
 
-  const stopVideoPlayback = () => {
-    if (activeVideoRef.current) {
-      const videoElement = activeVideoRef.current.querySelector('video');
+  useEffect(() => {
+    const activeVideoElement = activeVideoRef.current;
+    if (activeVideoElement) {
+      const videoElement = activeVideoElement.querySelector('video');
       if (videoElement) {
-        videoElement.pause();
+        videoElement.play();
       }
     }
-  };
+
+    return () => {
+      if (activeVideoElement) {
+        const videoElement = activeVideoElement.querySelector('video');
+        if (videoElement) {
+          videoElement.pause();
+        }
+      }
+    };
+  }, [currentVideoIndex]);
 
   const goToNext = () => {
-    stopVideoPlayback();
     setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videos.length);
-    if (currentVideoIndex === videos.length - 1) {
+    if (currentVideoIndex == videos.length - 1) {
       setCurrentVideoId(videos[0].elementId);
     } else {
       setCurrentVideoId(videos[currentVideoIndex + 1].elementId);
     }
-    setFirstVideo(currentVideoIndex + 1 === 0);
+    if (currentVideoIndex + 1 == 0) {
+      setFirstVideo(true);
+    } else {
+      setFirstVideo(false);
+    }
   };
 
   const goToPrevious = () => {
-    stopVideoPlayback();
     setCurrentVideoIndex((prevIndex) =>
       prevIndex === 0 ? videos.length - 1 : prevIndex - 1
     );
-    const newIndex = currentVideoIndex === 0 ? videos.length - 1 : currentVideoIndex - 1;
-    setCurrentVideoId(videos[newIndex].elementId);
-    setFirstVideo(newIndex === 0);
+    let index = currentVideoIndex;
+    if (currentVideoIndex == 0) {
+      index = videos.length - 1;
+    } else {
+      index = currentVideoIndex - 1;
+    }
+    setCurrentVideoId(videos[index].elementId);
+    if (currentVideoIndex - 1 == 0) {
+      setFirstVideo(true);
+    } else {
+      setFirstVideo(false);
+    }
   };
 
   const getClassNames = (index, elementId) => {
@@ -151,4 +172,3 @@ const Carousel = ({ videos }) => {
 };
 
 export default Carousel;
-
