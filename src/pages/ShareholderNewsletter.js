@@ -15,33 +15,6 @@ const ShareholderNewsletter = () => {
       resourcesRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  const CarouselVideos = [
-    {elementId: 'kAz6cJcn09qD1Jgm'},
-    {elementId: 'j7sWliFucdhZv3Xy'},
-    {elementId: 'IO6ACYKP3TTMa4bb'},
-    {elementId: 'jGEB9lNWfERa5Ieu'},
-    {elementId: 'hz7j0odFA7GSyPtT'},
-    {elementId: 'AdBdjMQm_9jFFCUF'},
-    {elementId: 'SDMq_E4dL3ar1pdB'},
-    {elementId: '8fN1jKigicrQ0085'},
-    {elementId: 'SeoVHM8KImajOku4'},
-    {elementId: '53reyMw14s_hdQ5v'},
-    {elementId: '0PNwAmovrV_wRl8_'},
-    {elementId: 'pAPgqhyDsRB_Mfpd'},
-    {elementId: '7KQMqPEqjRH7cv68'},
-    {elementId: 'vnGxWoyMyFyyAqfv'},
-    {elementId: 'SfhxD0PE17ke8bHD'},
-    {elementId: 'HZpLrsyuUHZUUmQg'},
-    {elementId: 'PgmDfstHpyaTspxD'},
-    {elementId: 'xsRwFQQHDPFLlnLX'},
-    {elementId: 'pM5_IFRv6ybT9Evu'},
-    {elementId: '8JnBq8joSI5oXRQC'},
-    {elementId: 'KgkGRGWTh3dZqEXj'},
-    {elementId: 'w4Eswbhi8TU4Tz_H'},
-    {elementId: 'p4LO4SWHqsEpnQV1'},
-    {elementId: 'yhKAq5ImcOOhRIan'},
-  ]
-
 
   const driversAndMotivationVideos =  [
     {
@@ -251,7 +224,11 @@ const ShareholderNewsletter = () => {
       }
     }
   ].filter(Boolean);
-
+  const allVideos = [...driversAndMotivationVideos, ...planForSuccessVideos, ...dailyWorkVideos];
+  const CarouselVideos = allVideos.map(video => ({
+    elementId: video.elementId,
+    thumbnailUrl: video.thumbnailUrl
+  }));
   return (
 
     <VideoProvider>

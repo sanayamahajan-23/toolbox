@@ -81,6 +81,27 @@
   right: 10px;
 }
 
+.thumbnail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumbnail {
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+.carousel img {
+  display: block;
+  width: 100%; /* or whatever size is appropriate */
+  height: auto;
+}
+.thumbnail:hover {
+  transform: scale(1.05);
+}
 
 @media (max-width: 1024px) {
   .carousel {
