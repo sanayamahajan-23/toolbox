@@ -5,16 +5,15 @@ import { useVideoContext } from '../contexts/VideoContext';
 const Carousel = ({ videos }) => {
 
   const { currentVideoIndex, setCurrentVideoIndex, currentvideoId, setCurrentVideoId } = useVideoContext();
-  const [isFirstVideo, setFirstVideo] = useState(true)
-
-  if(!currentvideoId) {
-    setCurrentVideoId(videos[0].elementId)
-  }
+  const [isFirstVideo, setFirstVideo] = useState(true);
 
   const activeVideoRef = useRef(null);
 
-  
   useEffect(() => {
+    if (!currentvideoId) {
+      setCurrentVideoId(videos[0].elementId);
+    }
+
     videos.forEach((video) => {
       (function (v, i, d, a, l, y, t, c, s) {
         y = "_" + d.toLowerCase();
@@ -84,41 +83,38 @@ const Carousel = ({ videos }) => {
     });
   }, [videos]);
 
-  const goToNext = () => {
+  const stopVideoPlayback = () => {
+    if (activeVideoRef.current) {
+      const videoElement = activeVideoRef.current.querySelector('video');
+      if (videoElement) {
+        videoElement.pause();
+      }
+    }
+  };
 
+  const goToNext = () => {
+    stopVideoPlayback();
     setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videos.length);
-    if(currentVideoIndex == videos.length -1) {
-      setCurrentVideoId(videos[0].elementId)
+    if (currentVideoIndex === videos.length - 1) {
+      setCurrentVideoId(videos[0].elementId);
     } else {
-      setCurrentVideoId(videos[currentVideoIndex+1].elementId)
+      setCurrentVideoId(videos[currentVideoIndex + 1].elementId);
     }
-    if(currentVideoIndex + 1 == 0) {
-      setFirstVideo(true)
-    } else {
-      setFirstVideo(false)
-    }
+    setFirstVideo(currentVideoIndex + 1 === 0);
   };
 
   const goToPrevious = () => {
+    stopVideoPlayback();
     setCurrentVideoIndex((prevIndex) =>
       prevIndex === 0 ? videos.length - 1 : prevIndex - 1
     );
-    let index = currentVideoIndex
-    if(currentVideoIndex == 0) {
-      index = videos.length - 1
-    } else {
-      index = currentVideoIndex - 1
-    }
-    setCurrentVideoId(videos[index].elementId)
-    if(currentVideoIndex -1 == 0) {
-      setFirstVideo(true)
-    } else {
-      setFirstVideo(false)
-    }
+    const newIndex = currentVideoIndex === 0 ? videos.length - 1 : currentVideoIndex - 1;
+    setCurrentVideoId(videos[newIndex].elementId);
+    setFirstVideo(newIndex === 0);
   };
 
   const getClassNames = (index, elementId) => {
-    if (elementId == currentvideoId ) return 'active';
+    if (elementId === currentvideoId) return 'active';
     if ((index + 1) % videos.length === currentVideoIndex) return 'next';
     if ((index - 1 + videos.length) % videos.length === currentVideoIndex) return 'previous';
     return 'hidden';
@@ -126,20 +122,21 @@ const Carousel = ({ videos }) => {
 
   return (
     <div className="carousel">
-      { !isFirstVideo && (<button className="carousel-button left" onClick={goToPrevious}>
-        &lt;
-      </button>)}
+      {!isFirstVideo && (
+        <button className="carousel-button left" onClick={goToPrevious}>
+          &lt;
+        </button>
+      )}
       {videos.length > 0 ? (
         videos.map((video, index) => (
           <div
             key={index}
             className={`carousel-video-container ${getClassNames(index, video.elementId)}`}
-            ref={ video.elementId == currentvideoId ? activeVideoRef : null }
-            // ref={index === currentVideoIndex ? activeVideoRef : null}
+            ref={video.elementId === currentvideoId ? activeVideoRef : null}
           >
             <div
               id={video.elementId}
-              style={{ width: "100%", position: "relative", paddingTop: "56.25%" }}
+              style={{ width: '100%', position: 'relative', paddingTop: '56.25%' }}
             ></div>
           </div>
         ))
@@ -154,3 +151,4 @@ const Carousel = ({ videos }) => {
 };
 
 export default Carousel;
+
