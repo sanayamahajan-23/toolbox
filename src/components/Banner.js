@@ -99,7 +99,7 @@ const Banner = ({ onScrollToResources }) => {
           <img src="/assets/journal.png" alt="Journal" style={journalImageStyle} />
           <span style={ctaTextStyle}>
             Don't have a journal yet? <br />
-            <a href="/order" style={ctaLinkStyle}>Go order one <strong>here</strong></a>
+            <a href="https://go.shortenthegap.com/order-page1725647264316" target="__blank" style={ctaLinkStyle}>Go order one <strong>here</strong></a>
           </span>
         </div>
         <div style={secondButtonStyle} onClick={onScrollToResources}>
