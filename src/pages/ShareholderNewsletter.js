@@ -90,7 +90,7 @@ const ShareholderNewsletter = () => {
       }
     },
     {
-      elementId: 'wysiQ9FSzMBBklbV',
+      elementId: 'SeoVHM8KImajOku4',
       id: 'BGwbjuKTdY1zIm2Z',
       thumbnailUrl: {
         desktop: 'https://fast.vidalytics.com/video/0kHi6Jq0/BGwbjuKTdY1zIm2Z/img/thumbnail/FINALTHUMBNAIL-66da4e69a915e.png',
