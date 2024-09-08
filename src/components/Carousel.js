@@ -13,7 +13,7 @@ const Carousel = ({ videos }) => {
     }
 
     videos.forEach((video) => {
-      if (video.elementId === currentvideoId) { // Only load the active video
+      if (video.elementId === currentvideoId) {
         (function (v, i, d, a, l, y, t, c, s) {
           y = "_" + d.toLowerCase();
           c = d + "L";
@@ -160,14 +160,14 @@ const Carousel = ({ videos }) => {
             )}
             {/* Optional placeholder for the side videos */}
             {video.elementId !== currentvideoId && (
-           <div className="thumbnail-container">
-           <img
-             src={video?.thumbnailUrl?.desktop}
-             alt={`Thumbnail ${index + 1}`}
-             className="thumbnail"
-             onClick={() => setCurrentVideoIndex(index)}
-           />
-         </div>
+              <div className="thumbnail-container">
+                <img
+                  src={video?.thumbnailUrl?.desktop}
+                  alt={`Thumbnail ${index + 1}`}
+                  className="thumbnail"
+                  style={{ pointerEvents: 'none' }} // Disable interaction
+                />
+              </div>
             )}
           </div>
         ))
