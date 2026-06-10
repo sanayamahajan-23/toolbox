@@ -40,7 +40,6 @@
       "last 1 safari version"
     ]
   },
-  "packageManager": "pnpm@7.0.1",
   "resolutions": {
     "eslint-config-react-app": "7.0.1"
   }

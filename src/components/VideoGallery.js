@@ -6,6 +6,7 @@ const VideoGallery = ({ heading, videos, offset }) => {
   const sliderRef = useRef(null);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(true);
+  const [loadedImages, setLoadedImages] = useState({});
   const { setCurrentVideoIndex, setCurrentVideoId } = useVideoContext();
 
   const handleScroll = () => {
@@ -52,6 +53,10 @@ const VideoGallery = ({ heading, videos, offset }) => {
     });
   };
 
+  const handleImageLoad = (index) => {
+    setLoadedImages((prev) => ({ ...prev, [index]: true }));
+  };
+
   return (
     <div className="video-gallery">
       <h2>{heading}</h2>
@@ -68,11 +73,15 @@ const VideoGallery = ({ heading, videos, offset }) => {
               className="video-gallery-item"
               onClick={() => handleVideoClick(index, video.elementId)}
             >
+              {!loadedImages[index] && <div className="skeleton-box" />}
               <img
                 src={video?.thumbnailUrl?.desktop}
                 alt={`Video thumbnail ${index + 1}`}
                 width="100%"
                 height="auto"
+                loading="lazy"
+                onLoad={() => handleImageLoad(index)}
+                style={{ opacity: loadedImages[index] ? 1 : 0, position: 'relative', zIndex: 2 }}
               />
               <div className="play-button">&#9658;</div>
             </div>

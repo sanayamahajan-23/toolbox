@@ -5,7 +5,10 @@ import { useVideoContext } from '../contexts/VideoContext';
 const Carousel = ({ videos }) => {
   const { currentVideoIndex, setCurrentVideoIndex, currentvideoId, setCurrentVideoId } = useVideoContext();
   const [isFirstVideo, setFirstVideo] = useState(true);
+  const [loadedImages, setLoadedImages] = useState({});
+  const [embedReady, setEmbedReady] = useState(false);
   const activeVideoRef = useRef(null);
+  const embedTimeoutRef = useRef(null);
 
   useEffect(() => {
     if (!currentvideoId) {
@@ -29,6 +32,7 @@ const Carousel = ({ videos }) => {
           var vl = "Loader",
             vli = v[y][vl],
             vsl = v[c][vl + "Script"],
+            // eslint-disable-next-line no-unused-vars
             vlf = v[c][vl + "Loaded"],
             ve = "Embed";
           if (!vsl) {
@@ -43,7 +47,7 @@ const Carousel = ({ videos }) => {
               s.src = u;
               if (s.readyState) {
                 s.onreadystatechange = function () {
-                  if (s.readyState === "loaded" || s.readyState == "complete") {
+                  if (s.readyState === "loaded" || s.readyState === "complete") {
                     s.onreadystatechange = null;
                     vlf = 1;
                     cb();
@@ -78,7 +82,19 @@ const Carousel = ({ videos }) => {
         );
       }
     });
-  }, [videos, currentvideoId]);
+  }, [videos, currentvideoId, setCurrentVideoId]);
+
+  // Hide embed spinner after a reasonable load window
+  useEffect(() => {
+    setEmbedReady(false);
+    if (embedTimeoutRef.current) clearTimeout(embedTimeoutRef.current);
+    embedTimeoutRef.current = setTimeout(() => {
+      setEmbedReady(true);
+    }, 3500);
+    return () => {
+      if (embedTimeoutRef.current) clearTimeout(embedTimeoutRef.current);
+    };
+  }, [currentvideoId]);
 
   useEffect(() => {
     const activeVideoElement = activeVideoRef.current;
@@ -98,6 +114,10 @@ const Carousel = ({ videos }) => {
       }
     };
   }, [currentVideoIndex]);
+
+  const handleImageLoad = (index) => {
+    setLoadedImages((prev) => ({ ...prev, [index]: true }));
+  };
 
   const goToNext = () => {
     setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videos.length);
@@ -153,19 +173,32 @@ const Carousel = ({ videos }) => {
             ref={video.elementId === currentvideoId ? activeVideoRef : null}
           >
             {video.elementId === currentvideoId && (
-              <div
-                id={video.elementId}
-                style={{ width: '100%', position: 'relative', paddingTop: '56.25%' }}
-              ></div>
+              <div style={{ width: '100%', aspectRatio: '16 / 9', background: '#1a1a1a', position: 'relative' }}>
+                <div id={video.elementId} style={{ position: 'absolute', inset: 0 }}></div>
+                {!embedReady && (
+                  <div className="video-loading-spinner">
+                    <div className="spinner"></div>
+                  </div>
+                )}
+              </div>
             )}
             {/* Optional placeholder for the side videos */}
             {video.elementId !== currentvideoId && (
               <div className="thumbnail-container">
+                {!loadedImages[index] && <div className="skeleton-box" />}
                 <img
                   src={video?.thumbnailUrl?.desktop}
                   alt={`Thumbnail ${index + 1}`}
                   className="thumbnail"
-                  style={{ pointerEvents: 'none' }} // Disable interaction
+                  loading="lazy"
+                  onLoad={() => handleImageLoad(index)}
+                  style={{
+                    pointerEvents: 'none',
+                    opacity: loadedImages[index] ? 1 : 0,
+                    transition: 'opacity 0.4s ease',
+                    position: 'relative',
+                    zIndex: 2,
+                  }}
                 />
               </div>
             )}

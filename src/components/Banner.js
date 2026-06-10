@@ -102,11 +102,11 @@ const Banner = ({ onScrollToResources }) => {
             <a href="https://go.shortenthegap.com/order-page1725647264316" target="__blank" style={ctaLinkStyle}>Go order one <strong>here</strong></a>
           </span>
         </div>
-        <div style={secondButtonStyle} onClick={onScrollToResources}>
+        <div style={secondButtonStyle} onClick={onScrollToResources} role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onScrollToResources(); }}>
           <span style={secondCtaTextStyle}>
-            <a href="#" style={{ color: '#b24525', textDecoration: 'none' }}>
+            <span style={{ color: '#b24525', textDecoration: 'none', cursor: 'pointer' }}>
               <strong>DOWNLOAD</strong><br />your free resources
-            </a>
+            </span>
           </span>
         </div>
       </div>
